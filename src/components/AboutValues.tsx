@@ -1,33 +1,40 @@
 import { motion } from 'framer-motion';
-import { Zap, Target, Award } from 'lucide-react';
+import { Zap, Handshake, Code, ShieldCheck } from 'lucide-react';
 
 const values = [
   {
     icon: Zap,
-    title: 'Velocidad Extrema',
-    description: 'Obsesionados con el rendimiento. Cada milisegundo cuenta. Nuestros sitios cargan en menos de 0.5 segundos.',
+    title: '⚡ Rendimiento como Base',
+    description: 'La velocidad no es un servicio adicional, es el estándar mínimo. Cada línea de código que escribimos está pensada para ofrecer una experiencia fluida y sin interrupciones.',
     color: 'from-cyan-500 to-cyan-600',
     shadowColor: 'shadow-cyan-500/30'
   },
   {
-    icon: Target,
-    title: 'Precisión Técnica',
-    description: 'Código limpio, arquitectura escalable y mejores prácticas. No hay atajos en la calidad.',
+    icon: Handshake,
+    title: '🤝 Transparencia Técnica',
+    description: 'Hablamos claro. No escondemos soluciones mediocres detrás de jerga técnica incomprensible ni te atamos a contratos de mantenimiento abusivos. Tu código es tuyo.',
     color: 'from-purple-500 to-purple-600',
     shadowColor: 'shadow-purple-500/30'
   },
   {
-    icon: Award,
-    title: 'Excelencia Premium',
-    description: 'Cada proyecto es una obra maestra. Diseño impecable, UX excepcional y resultados medibles.',
+    icon: Code,
+    title: '🛠️ Soluciones, No Plantillas',
+    description: 'Tu negocio es único y tu web también debería serlo. Desarrollamos a medida para garantizar que tu sitio escale contigo, eliminando el "código basura" que frena tu crecimiento.',
     color: 'from-violet-500 to-violet-600',
     shadowColor: 'shadow-violet-500/30'
+  },
+  {
+    icon: ShieldCheck,
+    title: '🔒 Seguridad por Diseño',
+    description: 'Al separar la interfaz visual de tu base de datos, no solo logramos velocidad, sino que blindamos tu proyecto contra los ataques más comunes de la web.',
+    color: 'from-emerald-500 to-emerald-600',
+    shadowColor: 'shadow-emerald-500/30'
   }
 ];
 
 export default function AboutValues() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {values.map((value, index) => {
         const Icon = value.icon;
         return (

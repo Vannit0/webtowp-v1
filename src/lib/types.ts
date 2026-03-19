@@ -7,6 +7,7 @@ export interface Category {
 export interface Author {
   name: string;
   avatar: string;
+  description: string;
 }
 
 export interface Post {

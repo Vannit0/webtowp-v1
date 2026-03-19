@@ -5,6 +5,7 @@ import { Send, CheckCircle2 } from 'lucide-react';
 interface FormData {
   name: string;
   email: string;
+  website: string;
   service: string;
   message: string;
 }
@@ -13,6 +14,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    website: '',
     service: '',
     message: ''
   });
@@ -21,10 +23,11 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const services = [
-    'Landing Pages',
-    'Sitios Informativos',
-    'Optimización WP',
-    'Migración Headless'
+    'Sitio Web Corporativo',
+    'Landing Page',
+    'Migración Headless WP',
+    'Optimización Técnica',
+    'Otro'
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -47,6 +50,7 @@ export default function ContactForm() {
       setFormData({
         name: '',
         email: '',
+        website: '',
         service: '',
         message: ''
       });
@@ -63,24 +67,22 @@ export default function ContactForm() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative bg-white/40 backdrop-blur-2xl border border-white/50 rounded-3xl p-8 md:p-10 shadow-2xl"
+        className="relative bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-8 md:p-10 shadow-2xl"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-violet-500/5 rounded-3xl pointer-events-none"></div>
         
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            <span className="bg-gradient-to-r from-cyan-500 via-purple-500 to-violet-600 bg-clip-text text-transparent">
-              Comencemos tu proyecto
-            </span>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900">
+            Solicita tu Evaluación
           </h2>
           <p className="text-slate-600 mb-8">
-            Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.
+            Completa el formulario y evaluaremos cómo podemos ayudarte.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                Nombre completo
+                Nombre Completo
               </label>
               <input
                 type="text"
@@ -89,14 +91,14 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
                 placeholder="Juan Pérez"
               />
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                Email
+                Correo Electrónico
               </label>
               <input
                 type="email"
@@ -105,14 +107,29 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
                 placeholder="juan@ejemplo.com"
               />
             </div>
 
             <div>
+              <label htmlFor="website" className="block text-sm font-semibold text-slate-700 mb-2">
+                URL de tu sitio web actual <span className="text-slate-400 font-normal">(Opcional)</span>
+              </label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                placeholder="https://tuempresa.com"
+              />
+            </div>
+
+            <div>
               <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
-                Servicio de interés
+                ¿En qué podemos ayudarte?
               </label>
               <select
                 id="service"
@@ -120,7 +137,7 @@ export default function ContactForm() {
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                   backgroundRepeat: 'no-repeat',
@@ -129,7 +146,7 @@ export default function ContactForm() {
                   paddingRight: '2.5rem'
                 }}
               >
-                <option value="">Selecciona un servicio</option>
+                <option value="">Selecciona una opción</option>
                 {services.map((service) => (
                   <option key={service} value={service}>
                     {service}
@@ -140,7 +157,7 @@ export default function ContactForm() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                Mensaje
+                Cuéntanos sobre tu proyecto
               </label>
               <textarea
                 id="message"
@@ -149,8 +166,8 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 resize-none"
-                placeholder="Cuéntanos sobre tu proyecto..."
+                className="w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
+                placeholder="¿Cuál es el principal problema que quieres resolver con tu web actual o qué objetivo buscas?"
               />
             </div>
 
@@ -184,7 +201,7 @@ export default function ContactForm() {
                   </>
                 ) : (
                   <>
-                    Enviar mensaje
+                    Solicitar Evaluación
                     <Send className="w-5 h-5" />
                   </>
                 )}

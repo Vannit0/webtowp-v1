@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          <div className="text-left order-2 lg:order-1">
+          <div className="text-left order-1 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-xl border border-white/60 shadow-lg shadow-slate-200/50 text-slate-700 text-sm font-medium mb-6"
             >
               <Zap className="w-4 h-4 text-blue-500" />
-              <span>La velocidad de Astro + la potencia de WordPress</span>
+              <span>Especialistas en Desarrollo Web Moderno</span>
             </motion.div>
 
             <motion.h1
@@ -24,11 +24,13 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
-              Sitios web que cargan
+              Sitios Web
               <br />
               <span className="bg-gradient-to-r from-cyan-500 via-purple-500 to-violet-600 bg-clip-text text-transparent">
-                en milisegundos
+                Rápidos y Escalables
               </span>
+              <br />
+              que Impulsan tu Negocio.
             </motion.h1>
 
             <motion.p
@@ -37,8 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-xl"
             >
-              Desarrollamos experiencias web premium con WordPress Headless y Astro.
-              Rendimiento excepcional, SEO optimizado y gestión de contenido sin límites.
+              Desarrollamos plataformas web seguras y preparadas para el futuro. Combinamos la facilidad de uso de WordPress con la velocidad de las tecnologías modernas para ofrecer la mejor experiencia a tus usuarios.
             </motion.p>
 
             <motion.div
@@ -65,7 +66,7 @@ export default function Hero() {
                   }}
                 ></motion.div>
                 <span className="relative z-10 flex items-center gap-2 justify-center">
-                  Comenzar proyecto
+                  Hablemos de tu Proyecto
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </motion.button>
@@ -75,16 +76,25 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Ver casos de éxito
+                Ver Portafolio
               </motion.button>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-sm text-slate-500 mt-4"
+            >
+              Desarrollo enfocado en velocidad, accesibilidad y buenas prácticas.
+            </motion.p>
           </div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="relative order-2 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative max-w-lg w-full">
               <motion.div

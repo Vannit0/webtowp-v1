@@ -20,111 +20,68 @@ import AboutValues from '../components/AboutValues';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20 max-w-4xl mx-auto">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-xl border border-white/60 shadow-lg shadow-slate-200/50 text-slate-700 text-sm font-medium mb-6">
-            <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            <span>Sobre Nosotros</span>
+            <span>💡 Nuestra Filosofía</span>
           </div>
 
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            Obsesionados con la
+            Hacemos que la Tecnología Compleja
             <br />
             <span class="bg-gradient-to-r from-cyan-500 via-purple-500 to-violet-600 bg-clip-text text-transparent">
-              excelencia técnica
+              Funcione a tu Favor.
             </span>
           </h1>
 
-          <p class="text-xl md:text-2xl text-slate-800/90 leading-relaxed mb-6">
-            En <span class="font-bold bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">WebToWP</span>, 
-            no construimos sitios web ordinarios. Creamos experiencias digitales que cargan en milisegundos, 
-            convierten visitantes en clientes y establecen nuevos estándares de calidad.
-          </p>
-
-          <p class="text-lg text-slate-700 leading-relaxed">
-            Nuestra misión es simple: combinar la potencia de <span class="font-semibold text-purple-600">WordPress</span> como 
-            CMS con la velocidad ultrarrápida de <span class="font-semibold text-cyan-600">Astro</span>, 
-            entregando sitios que no solo se ven increíbles, sino que funcionan a la perfección.
+          <p class="text-xl md:text-2xl text-slate-800/90 leading-relaxed">
+            En WebToWP nacimos con un objetivo claro: terminar con la era de los sitios web lentos, vulnerables y frustrantes. Construimos plataformas digitales de alto rendimiento que respetan el tiempo de tus usuarios y la inversión de tu negocio.
           </p>
         </div>
 
-        <div class="mb-20">
-          <AboutValues client:visible />
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <div class="relative">
-            <div class="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl"></div>
-            <div class="relative bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-8 shadow-xl">
-              <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                <span class="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                  Nuestra Filosofía
-                </span>
-              </h2>
-              <div class="space-y-4 text-slate-800/90 leading-relaxed">
-                <p>
-                  Creemos que la tecnología debe ser invisible. Los usuarios no deberían esperar, 
-                  no deberían frustrarse, no deberían preguntarse cómo funciona algo.
-                </p>
-                <p>
-                  Por eso elegimos <strong>WordPress Headless + Astro</strong>: la combinación perfecta 
-                  entre gestión de contenido intuitiva y rendimiento extremo.
-                </p>
-                <p>
-                  Cada línea de código que escribimos está optimizada. Cada diseño está pensado 
-                  para convertir. Cada proyecto es tratado como si fuera nuestro propio negocio.
-                </p>
-              </div>
+        <div class="mb-20 max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              <span class="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">
+                El problema de la web tradicional
+              </span>
+              <br />
+              <span class="text-slate-900">(y por qué decidimos cambiarlo).</span>
+            </h2>
+          </div>
+          
+          <div class="prose prose-lg max-w-3xl mx-auto mb-20">
+            <div class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-3xl p-8 md:p-12 shadow-lg">
+              <p class="text-lg md:text-xl text-slate-800/90 leading-relaxed mb-6">
+                Durante años, vimos cómo empresas increíbles perdían clientes y oportunidades simplemente porque sus páginas de WordPress estaban sobrecargadas. Temas pesados, exceso de plugins y bases de datos colapsadas se habían convertido en la norma de la industria.
+              </p>
+              <p class="text-lg md:text-xl text-slate-800/90 leading-relaxed">
+                Sabíamos que tenía que haber una forma mejor. Por eso nos especializamos en la arquitectura "Headless" y en el desarrollo con Astro. Nuestra misión es devolverle a la web su velocidad y seguridad originales, sin quitarte a ti la comodidad de gestionar tu propio contenido.
+              </p>
             </div>
           </div>
 
-          <div class="space-y-6">
-            <div class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/30">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900 mb-2">Performance First</h3>
-                  <p class="text-slate-700">
-                    Lighthouse 100/100 no es una meta, es el estándar mínimo.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              <span class="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">
+                Los pilares de nuestro trabajo.
+              </span>
+            </h2>
+            <p class="text-xl text-slate-700 max-w-2xl mx-auto">
+              No creemos en los atajos. Creemos en la ingeniería web bien hecha.
+            </p>
+          </div>
+          
+          <AboutValues client:visible />
+        </div>
 
-            <div class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900 mb-2">Seguridad Total</h3>
-                  <p class="text-slate-700">
-                    Arquitectura headless = superficie de ataque mínima.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-violet-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/30">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-slate-900 mb-2">SEO Optimizado</h3>
-                  <p class="text-slate-700">
-                    Estructura perfecta, metadatos impecables, resultados medibles.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div class="mb-20 max-w-4xl mx-auto">
+          <div class="bg-white/40 backdrop-blur-xl border border-white/50 rounded-3xl p-8 md:p-12 shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
+              <span class="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">
+                ¿Para quién es WebToWP?
+              </span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-800/90 leading-relaxed text-center">
+              No somos una agencia de volumen. Somos el socio tecnológico para dueños de negocios, gerentes de marketing y empresas que entienden que su página web es un activo crítico. Si buscas un sitio genérico para salir del paso, probablemente no seamos para ti. Si buscas calidad técnica, estabilidad a largo plazo y un equipo que se tome tu rendimiento en serio, estás en el lugar correcto.
+            </p>
           </div>
         </div>
 
@@ -133,26 +90,28 @@ import AboutValues from '../components/AboutValues';
           
           <div class="relative z-10 text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              ¿Listo para trabajar con nosotros?
+              ¿Compartimos la misma visión?
             </h2>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Transformemos tu visión en una experiencia web que supere todas las expectativas.
+              Si valoras la calidad técnica y estás listo para llevar tu presencia digital al estándar que tu empresa merece, nos encantaría conocer tu proyecto.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/contacto"
+                href="https://wa.me/5491234567890"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-purple-600 bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Comenzar proyecto
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
+                Escríbenos por WhatsApp
               </a>
               <a
-                href="/proyectos"
+                href="/contacto"
                 class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/20 backdrop-blur-xl border-2 border-white/50 rounded-xl hover:bg-white/30 transition-all"
               >
-                Ver proyectos
+                Ir al formulario de contacto
               </a>
             </div>
           </div>

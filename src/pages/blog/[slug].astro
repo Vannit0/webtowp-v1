@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import SmoothScroll from '../../components/SmoothScroll';
 import FloatingOrbs from '../../components/FloatingOrbs';
+import AuthorBox from '../../components/AuthorBox.astro';
 import { getAllPosts, getPostBySlug } from '../../lib/api';
 import type { Post, Category } from '../../lib/types';
 import { cleanExcerpt } from '../../lib/utils';
@@ -105,6 +106,12 @@ const readingTime = Math.ceil(post.content.replace(/<[^>]*>/g, '').split(/\s+/).
             set:html={post.content}
           />
         </div>
+
+        <AuthorBox 
+          authorName={post.author.name}
+          authorAvatar={post.author.avatar}
+          authorDescription={post.author.description}
+        />
 
         <div class="mt-16 pt-8 border-t border-gray-300">
           <div class="flex items-center justify-between flex-wrap gap-4">

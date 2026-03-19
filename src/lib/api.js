@@ -194,7 +194,8 @@ export async function getPosts() {
         })),
         author: {
           name: author?.name || 'WebToWP',
-          avatar: author?.avatar_urls?.['96'] || ''
+          avatar: author?.avatar_urls?.['96'] || '',
+          description: author?.description || ''
         },
         date: item.date,
         modified: item.modified
@@ -242,7 +243,8 @@ export async function getPostBySlug(slug) {
       })),
       author: {
         name: author?.name || 'WebToWP',
-        avatar: author?.avatar_urls?.['96'] || ''
+        avatar: author?.avatar_urls?.['96'] || '',
+        description: author?.description || ''
       },
       date: item.date,
       modified: item.modified

@@ -4,40 +4,40 @@ import ServiceCard from './ServiceCard';
 
 const services = [
   {
-    icon: Rocket,
-    title: 'Landing Pages',
-    description: 'Páginas de aterrizaje optimizadas para conversión con tiempos de carga ultrarrápidos.',
-    features: ['Diseño responsive', 'SEO optimizado', 'Análisis integrado'],
-    iconColor: 'text-cyan-500',
-    iconBg: 'bg-cyan-50',
-    accentColor: 'border-cyan-500'
-  },
-  {
     icon: Globe,
-    title: 'Sitios Informativos',
-    description: 'Sitios corporativos y portafolios con gestión de contenido flexible y rendimiento excepcional.',
-    features: ['CMS WordPress', 'Multiidioma', 'Escalabilidad'],
+    title: 'Sitios Corporativos',
+    description: 'Diseño profesional y estructurado que transmite confianza y comunica claramente el valor de tu empresa.',
+    features: ['Diseño profesional', 'Estructura clara', 'Fácil navegación'],
     iconColor: 'text-purple-500',
     iconBg: 'bg-purple-50',
     accentColor: 'border-purple-500'
   },
   {
-    icon: Gauge,
-    title: 'Optimización WP',
-    description: 'Mejoramos sitios WordPress existentes migrándolos a arquitectura Headless para máximo rendimiento.',
-    features: ['Auditoría completa', 'Migración segura', 'Mejora de velocidad'],
-    iconColor: 'text-cyan-600',
+    icon: Rocket,
+    title: 'Landing Pages',
+    description: 'Páginas enfocadas en un solo objetivo, diseñadas de forma limpia para captar leads y apoyar tus campañas.',
+    features: ['Objetivo claro', 'Diseño limpio', 'Captación de leads'],
+    iconColor: 'text-cyan-500',
     iconBg: 'bg-cyan-50',
-    accentColor: 'border-cyan-600'
+    accentColor: 'border-cyan-500'
   },
   {
     icon: ArrowRightLeft,
-    title: 'Migración Headless',
-    description: 'Transformamos tu WordPress tradicional en una experiencia moderna y veloz sin perder contenido.',
-    features: ['Sin downtime', 'Preservación de SEO', 'Capacitación incluida'],
+    title: 'Migración Headless WP',
+    description: 'Modernizamos tu sitio actual de WordPress hacia una arquitectura más rápida y segura, sin perder tu contenido.',
+    features: ['Migración segura', 'Sin pérdida de datos', 'Mejora de velocidad'],
     iconColor: 'text-violet-600',
     iconBg: 'bg-violet-50',
     accentColor: 'border-violet-600'
+  },
+  {
+    icon: Gauge,
+    title: 'Optimización Técnica',
+    description: 'Auditoría y mejora del rendimiento (Core Web Vitals) de tu web actual para que funcione de manera óptima.',
+    features: ['Auditoría técnica', 'Core Web Vitals', 'Optimización continua'],
+    iconColor: 'text-cyan-600',
+    iconBg: 'bg-cyan-50',
+    accentColor: 'border-cyan-600'
   }
 ];
 
@@ -74,10 +74,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Nuestros Servicios
+            Soluciones digitales a medida.
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Soluciones web premium adaptadas a tus necesidades
+            Desarrollos adaptados a los objetivos y necesidades reales de tu proyecto.
           </p>
         </motion.div>
 

@@ -1,0 +1,74 @@
+---
+interface Props {
+  authorName?: string;
+  authorAvatar?: string;
+  authorDescription?: string;
+}
+
+const { 
+  authorName = 'Equipo Técnico WebToWP',
+  authorAvatar = '/logo-webtowp2.png',
+  authorDescription = ''
+} = Astro.props;
+
+const defaultBio = 'Arquitectura y Desarrollo en WebToWP. Junto a nuestro equipo, ayudamos a empresas a dejar atrás los sitios lentos y vulnerables mediante tecnología Headless y Astro. Construimos plataformas digitales de alto rendimiento que Google ama y que tus clientes disfrutan.';
+
+const cleanDescription = (desc: string) => {
+  return desc.replace(/<[^>]*>/g, '').trim();
+};
+
+const displayBio = authorDescription ? cleanDescription(authorDescription) : defaultBio;
+---
+
+<div class="author-box mt-16 p-8 bg-white/40 backdrop-blur-md rounded-3xl border border-white/50 shadow-lg">
+  <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+    <div class="flex-shrink-0">
+      <img 
+        src={authorAvatar} 
+        alt={authorName}
+        class="w-20 h-20 rounded-full border-2 border-brand-purple/30 shadow-md object-cover"
+        loading="lazy"
+      />
+    </div>
+    
+    <div class="flex-grow">
+      <div class="flex flex-col gap-2 mb-3">
+        <h3 class="text-2xl font-bold text-gray-900">{authorName}</h3>
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-brand-purple/20 to-brand-cyan/20 border border-brand-purple/30 text-sm font-semibold text-brand-purple w-fit">
+          ⚡ Equipo Técnico WebToWP
+        </span>
+      </div>
+      
+      <p class="text-gray-700 leading-relaxed mb-6">
+        {displayBio}
+      </p>
+      
+      <a 
+        href="/contacto"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-white/60 backdrop-blur-sm border-2 border-brand-purple/30 text-brand-purple font-semibold rounded-full hover:bg-brand-purple hover:text-white hover:border-brand-purple hover:shadow-xl transition-all duration-300 group"
+      >
+        Auditar mi web actual
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .author-box {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
