@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SmoothScroll from '../components/SmoothScroll';
+import FloatingOrbs from '../components/FloatingOrbs';
+import ProjectGrid from '../components/ProjectGrid';
+import { getAllProjects } from '../lib/api.js';
+import { Image } from 'astro:assets';
+
+const projects = await getAllProjects();
+---
+
+<Layout 
+  title="Proyectos - WebToWP | Portfolio de Desarrollo Web Premium"
+  description="Descubre nuestro portfolio de proyectos web desarrollados con WordPress Headless y Astro. Sitios ultrarrápidos, seguros y optimizados."
+>
+  <FloatingOrbs client:load />
+  <SmoothScroll client:load />
+  <Navbar />
+  
+  <main class="relative z-10 bg-brand-offwhite min-h-screen">
+    <section class="relative overflow-hidden pt-32 pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-xl border border-white/60 shadow-lg shadow-slate-200/50 text-slate-700 text-sm font-medium mb-6">
+            <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <span>Portfolio de Proyectos</span>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            Proyectos que
+            <br />
+            <span class="bg-gradient-to-r from-cyan-500 via-purple-500 to-violet-600 bg-clip-text text-transparent">
+              transforman negocios
+            </span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Explora nuestra colección de sitios web premium desarrollados con WordPress Headless y Astro.
+            Cada proyecto es una obra maestra de rendimiento, diseño y experiencia de usuario.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-20 left-1/4 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute -bottom-20 right-1/4 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+          
+          <div class="relative z-10">
+            <ProjectGrid client:load projects={projects} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-gradient-to-r from-purple-600 via-violet-500 to-cyan-500 rounded-3xl p-12 md:p-16 overflow-hidden">
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHpNNiAzNGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
+          
+          <div class="relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              ¿Listo para tu próximo proyecto?
+            </h2>
+            <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Transformemos tu visión en una experiencia web excepcional que impulse tu negocio al siguiente nivel.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contacto"
+                class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-purple-600 bg-white rounded-xl hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Comenzar proyecto
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+              <a
+                href="/servicios"
+                class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/20 backdrop-blur-xl border-2 border-white/50 rounded-xl hover:bg-white/30 transition-all"
+              >
+                Ver servicios
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>

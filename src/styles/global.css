@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #00D1FF;
+  --color-brand-purple: #7C3AED;
+  --color-brand-offwhite: #FDFCFB;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f3e8ff 50%, #e0f2fe 100%);
+  background-attachment: fixed;
+}

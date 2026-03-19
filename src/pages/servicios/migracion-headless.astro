@@ -1,0 +1,494 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SmoothScroll from '../../components/SmoothScroll';
+import FloatingOrbs from '../../components/FloatingOrbs';
+---
+
+<Layout title="Migración Headless - WebToWP">
+  <FloatingOrbs client:load />
+  <SmoothScroll client:load />
+  <Navbar />
+  
+  <main class="relative z-10 min-h-screen pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <section class="text-center mb-20">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-brand-purple to-brand-cyan bg-clip-text text-transparent">
+          Migración a WordPress Headless
+        </h1>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
+          Transforma tu WordPress tradicional en una arquitectura moderna y veloz sin perder tu contenido ni funcionalidades.
+        </p>
+        <div class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+          <img 
+            src="/hero-headless.webp" 
+            alt="Headless WordPress Migration" 
+            class="w-full h-auto"
+            onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop'"
+          />
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold mb-8 text-slate-900">¿Qué es WordPress Headless?</h2>
+          <div class="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/40 shadow-xl">
+            <p class="text-lg text-slate-700 leading-relaxed mb-4">
+              WordPress Headless separa el backend (gestión de contenido) del frontend (presentación). Mantienes WordPress 
+              como CMS pero el sitio se construye con tecnologías modernas como Astro, Next.js o React.
+            </p>
+            <p class="text-lg text-slate-700 leading-relaxed">
+              El resultado: velocidad extrema, seguridad reforzada, escalabilidad ilimitada y una experiencia de usuario 
+              superior. Tu equipo sigue usando el editor de WordPress que conoce, pero tus visitantes disfrutan de un sitio ultrarrápido.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-12 text-center text-slate-900">Ventajas de la Arquitectura Headless</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Velocidad Extrema</h3>
+            <p class="text-slate-600">
+              Sitios estáticos generados que cargan en menos de 1 segundo. 10x más rápido que WordPress tradicional.
+            </p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-purple to-violet-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Seguridad Máxima</h3>
+            <p class="text-slate-600">
+              Sin base de datos ni PHP expuestos. Superficie de ataque mínima contra hackers y malware.
+            </p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Escalabilidad Infinita</h3>
+            <p class="text-slate-600">
+              Soporta millones de visitas sin caídas. CDN global distribuye tu contenido instantáneamente.
+            </p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-purple to-violet-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Flexibilidad Total</h3>
+            <p class="text-slate-600">
+              Usa cualquier framework moderno. Integra con servicios externos sin limitaciones.
+            </p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Menor Costo</h3>
+            <p class="text-slate-600">
+              Hosting económico o gratuito. Sin necesidad de servidores potentes ni recursos elevados.
+            </p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-gradient-to-r from-brand-purple to-violet-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-900">SEO Superior</h3>
+            <p class="text-slate-600">
+              Core Web Vitals perfectos. Google premia la velocidad con mejor ranking orgánico.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-12 text-center text-slate-900">Proceso de Migración</h2>
+        <div class="max-w-5xl mx-auto space-y-6">
+          
+          <div class="bg-gradient-to-r from-brand-cyan/10 to-blue-500/10 rounded-2xl p-8 border-l-4 border-brand-cyan">
+            <div class="flex items-start gap-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold text-white">1</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Análisis y Planificación</h3>
+                <p class="text-slate-700 mb-4">
+                  Auditamos tu sitio actual, identificamos funcionalidades críticas y diseñamos la arquitectura headless óptima.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Inventario completo de contenido y funcionalidades</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Selección del stack tecnológico ideal</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Cronograma detallado de migración</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-brand-purple/10 to-violet-500/10 rounded-2xl p-8 border-l-4 border-brand-purple">
+            <div class="flex items-start gap-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-brand-purple to-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold text-white">2</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Configuración del Backend</h3>
+                <p class="text-slate-700 mb-4">
+                  Preparamos WordPress como API headless, optimizando endpoints y configurando permisos de acceso.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Instalación de WP REST API extendida</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Custom Post Types y taxonomías</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Seguridad y autenticación JWT</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-brand-cyan/10 to-blue-500/10 rounded-2xl p-8 border-l-4 border-brand-cyan">
+            <div class="flex items-start gap-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold text-white">3</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Desarrollo del Frontend</h3>
+                <p class="text-slate-700 mb-4">
+                  Construimos el nuevo frontend con tecnologías modernas, replicando diseño y mejorando UX.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Astro, Next.js o framework elegido</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Componentes reutilizables y optimizados</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Integración completa con WordPress API</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-brand-purple/10 to-violet-500/10 rounded-2xl p-8 border-l-4 border-brand-purple">
+            <div class="flex items-start gap-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-brand-purple to-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold text-white">4</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Testing y Optimización</h3>
+                <p class="text-slate-700 mb-4">
+                  Pruebas exhaustivas de funcionalidad, rendimiento y compatibilidad antes del lanzamiento.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Tests de velocidad y Core Web Vitals</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Verificación de SEO y metadatos</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-purple mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Pruebas en múltiples dispositivos</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-brand-cyan/10 to-blue-500/10 rounded-2xl p-8 border-l-4 border-brand-cyan">
+            <div class="flex items-start gap-6">
+              <div class="w-12 h-12 bg-gradient-to-r from-brand-cyan to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-2xl font-bold text-white">5</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Migración y Lanzamiento</h3>
+                <p class="text-slate-700 mb-4">
+                  Transición sin downtime, configuración de DNS y monitoreo post-lanzamiento.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Deploy en Vercel, Netlify o similar</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Configuración de CDN global</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-brand-cyan mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                    <span>Soporte y monitoreo 24/7 (30 días)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-4xl font-bold mb-12 text-center text-slate-900">Paquetes de Migración</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          
+          <div class="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/40 shadow-lg hover:shadow-2xl transition-all duration-300">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Starter</h3>
+              <p class="text-slate-600 mb-4">Sitios pequeños</p>
+              <div class="text-5xl font-bold text-slate-900 mb-2">$2,999</div>
+              <p class="text-slate-500">USD - Pago único</p>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Hasta 20 páginas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Frontend Astro o Next.js</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">WordPress REST API</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Deploy en Vercel/Netlify</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Soporte 15 días</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Entrega en 3 semanas</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="block w-full text-center py-3 px-6 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors">
+              Comenzar
+            </a>
+          </div>
+
+          <div class="bg-gradient-to-br from-brand-purple to-brand-cyan rounded-3xl p-[2px] shadow-2xl transform scale-105">
+            <div class="bg-white/90 backdrop-blur-lg rounded-3xl p-8 h-full">
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-purple to-brand-cyan text-white px-4 py-1 rounded-full text-sm font-bold">
+                RECOMENDADO
+              </div>
+              <div class="text-center mb-6 mt-4">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Business</h3>
+                <p class="text-slate-600 mb-4">Sitios medianos/grandes</p>
+                <div class="text-5xl font-bold bg-gradient-to-r from-brand-purple to-brand-cyan bg-clip-text text-transparent mb-2">$5,999</div>
+                <p class="text-slate-500">USD - Pago único</p>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700 font-medium">Todo del plan Starter +</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">Hasta 100 páginas</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">Custom Post Types</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">Búsqueda avanzada</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">ISR/SSR configurado</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">Soporte 30 días</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-brand-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  <span class="text-slate-700">Entrega en 2 semanas</span>
+                </li>
+              </ul>
+              <a href="#contacto" class="block w-full text-center py-3 px-6 bg-gradient-to-r from-brand-purple to-brand-cyan text-white rounded-xl font-semibold hover:opacity-90 transition-opacity">
+                Elegir Plan
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-lg rounded-3xl p-8 border border-white/40 shadow-lg hover:shadow-2xl transition-all duration-300">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+              <p class="text-slate-600 mb-4">Solución personalizada</p>
+              <div class="text-5xl font-bold text-slate-900 mb-2">Custom</div>
+              <p class="text-slate-500">Cotización a medida</p>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700 font-medium">Todo del plan Business +</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Páginas ilimitadas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Multisite WordPress</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Integraciones custom</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Arquitectura escalable</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Soporte extendido</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-cyan flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span class="text-slate-700">Cronograma personalizado</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="block w-full text-center py-3 px-6 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors">
+              Contactar
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="text-center bg-gradient-to-r from-brand-purple to-brand-cyan rounded-3xl p-12 text-white">
+        <h2 class="text-4xl font-bold mb-4">¿Listo para el Futuro de WordPress?</h2>
+        <p class="text-xl mb-8 opacity-90">
+          Migra a headless y disfruta de velocidad extrema, seguridad máxima y escalabilidad infinita.
+        </p>
+        <a href="#contacto" class="inline-block bg-white text-brand-purple px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-offwhite transition-colors shadow-lg">
+          Solicitar Consultoría Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SmoothScroll from '../../components/SmoothScroll';
+import FloatingOrbs from '../../components/FloatingOrbs';
+import { getPosts } from '../../lib/api';
+import { Image } from 'astro:assets';
+import type { Post, Category } from '../../lib/types';
+import { cleanExcerpt } from '../../lib/utils';
+
+const posts = await getPosts();
+
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('es-ES', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+}
+---
+
+<Layout 
+  title="Blog - Ideas y Estrategias Digitales | WebToWP"
+  description="Descubre las últimas tendencias en desarrollo web, WordPress Headless, Astro y estrategias digitales para tu negocio."
+>
+  <FloatingOrbs client:load />
+  <SmoothScroll client:load />
+  <Navbar />
+  
+  <main class="relative z-10 min-h-screen">
+    <section class="pt-32 pb-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-violet bg-clip-text text-transparent">
+            Ideas y Estrategias Digitales
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Explora nuestros artículos sobre desarrollo web moderno, optimización y las mejores prácticas del sector.
+          </p>
+        </div>
+
+        {posts.length === 0 ? (
+          <div class="text-center py-20">
+            <p class="text-xl text-gray-500">No hay artículos disponibles en este momento.</p>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post: Post) => (
+              <article 
+                class="group bg-white/40 backdrop-blur-xl rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/50"
+              >
+                <a href={`/blog/${post.slug}`} class="block">
+                  <div class="relative overflow-hidden aspect-[16/10]">
+                    <img
+                      src={post.imageUrl}
+                      alt={post.alt}
+                      class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:saturate-150"
+                      loading="lazy"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  <div class="p-6">
+                    {post.categories.length > 0 && (
+                      <div class="flex flex-wrap gap-2 mb-3">
+                        {post.categories.slice(0, 2).map((category: Category) => (
+                          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-brand-cyan/20 to-brand-purple/20 text-brand-purple border border-brand-purple/30">
+                            {category.name}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    
+                    <h2 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-brand-purple transition-colors duration-300">
+                      {post.title}
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                      {cleanExcerpt(post.excerpt)}
+                    </p>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200/50">
+                      <div class="flex items-center gap-3">
+                        {post.author.avatar && (
+                          <img 
+                            src={post.author.avatar} 
+                            alt={post.author.name}
+                            class="w-8 h-8 rounded-full"
+                            loading="lazy"
+                          />
+                        )}
+                        <span class="text-sm text-gray-600 font-medium">{post.author.name}</span>
+                      </div>
+                      <time class="text-sm text-gray-500" datetime={post.date}>
+                        {formatDate(post.date)}
+                      </time>
+                    </div>
+                    
+                    <div class="mt-4">
+                      <span class="inline-flex items-center text-brand-purple font-semibold group-hover:gap-2 transition-all duration-300">
+                        Leer más
+                        <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

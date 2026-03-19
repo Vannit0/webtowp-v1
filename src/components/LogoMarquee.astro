@@ -1,0 +1,120 @@
+---
+import { getLogos, getLogosFallback } from '../lib/api.js';
+
+let logos = [];
+
+try {
+  logos = await getLogos();
+  if (logos.length === 0) {
+    logos = await getLogosFallback();
+  }
+} catch (error) {
+  console.error('Error loading logos, using fallback:', error);
+  logos = await getLogosFallback();
+}
+
+const duplicatedLogos = [...logos, ...logos];
+---
+
+<section class="py-16 bg-transparent overflow-hidden -mt-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="text-center mx-auto max-w-3xl rounded-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-xl shadow-slate-200/50 p-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+        Tecnologías que dominamos
+      </h2>
+      <p class="text-lg text-slate-600">
+        Trabajamos con las mejores herramientas del ecosistema web moderno
+      </p>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+    
+    <div class="logo-marquee-container">
+      <div class="logo-marquee">
+        {duplicatedLogos.map((logo, index) => (
+          <div class="logo-item" data-index={index}>
+            <img
+              src={logo.imageUrl}
+              alt={logo.alt}
+              title={logo.title}
+              class="logo-image"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .logo-marquee {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+  }
+
+  .logo-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    min-width: 120px;
+    padding: 1rem;
+  }
+
+  .logo-image {
+    max-height: 100%;
+    max-width: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover .logo-image {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .logo-marquee {
+      gap: 3rem;
+      animation-duration: 30s;
+    }
+
+    .logo-item {
+      height: 60px;
+      min-width: 100px;
+    }
+
+    .logo-image {
+      max-width: 120px;
+    }
+  }
+</style>

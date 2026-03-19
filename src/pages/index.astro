@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import ValueProposition from '../components/ValueProposition';
+import Footer from '../components/Footer.astro';
+import SmoothScroll from '../components/SmoothScroll';
+import FloatingOrbs from '../components/FloatingOrbs';
+---
+
+<Layout 
+  title="WebToWP - WordPress Headless + Astro | Desarrollo Web Premium"
+  description="Agencia especializada en desarrollo web con WordPress Headless y Astro. Sitios ultrarrápidos, seguros y optimizados para SEO."
+>
+  <FloatingOrbs client:load />
+  <SmoothScroll client:load />
+  <Navbar />
+  <main class="relative z-10">
+    <Hero client:load />
+    <LogoMarquee />
+    <Services client:visible />
+    <ValueProposition client:visible />
+  </main>
+  <Footer />
+</Layout>
